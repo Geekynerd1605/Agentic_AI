@@ -16,3 +16,4 @@ faiss_cpu
 langchain_google_genai
 langchain-pinecone
 defusedxml
+ipywidgets
