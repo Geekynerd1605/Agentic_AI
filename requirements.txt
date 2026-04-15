@@ -18,3 +18,5 @@ langchain-pinecone
 defusedxml
 ipywidgets
 langsmith
+wikipedia
+youtube_search
