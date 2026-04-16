@@ -22,3 +22,5 @@ wikipedia
 youtube_search
 langgraph
 ipython
+chromadb
+# langchain_chromadb
