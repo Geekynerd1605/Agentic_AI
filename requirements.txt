@@ -20,3 +20,5 @@ ipywidgets
 langsmith
 wikipedia
 youtube_search
+langgraph
+ipython
