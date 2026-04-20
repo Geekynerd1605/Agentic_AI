@@ -24,3 +24,4 @@ langgraph
 ipython
 chromadb
 ddgs
+yfinance
