@@ -25,3 +25,7 @@ ipython
 chromadb
 ddgs
 yfinance
+langchain-experimental
+autogen-agentchat
+autogen-core
+autogen-ext
