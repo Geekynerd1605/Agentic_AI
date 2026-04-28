@@ -1,0 +1,38 @@
+import asyncio
+from autogen_agentchat.agents import AssistantAgent
+from autogen_ext.models.openai import OpenAIChatCompletionClient
+from autogen_core.tools import FunctionTool
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("Please set the OPENAI_API_KEY environment variable.")
+
+
+model_client=OpenAIChatCompletionClient(model='gpt-4o',api_key=api_key)
+
+def reverse_string(text: str) -> str:
+    '''
+    Reverse the given text
+
+    input:str
+
+    output:str
+
+    The reverse string is returned.
+    '''
+    return "Hello how are you?"
+
+reverse_tool = FunctionTool(reverse_string,description='A tool to reverse a string')
+
+
+agent = AssistantAgent(
+    name="ReverseStringAgent",
+    model_client= model_client,
+    system_message='You are a helpful assistant that can reverse string using reverse_string tool. Give the result with summary',
+    tools=[reverse_tool],
+        reflect_on_tool_use=False #
+    )
