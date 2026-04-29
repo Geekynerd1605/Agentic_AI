@@ -29,3 +29,5 @@ langchain-experimental
 autogen-agentchat
 autogen-core
 autogen-ext
+autogen-ext["http-tool"]
+autogen-ext["openai"]
