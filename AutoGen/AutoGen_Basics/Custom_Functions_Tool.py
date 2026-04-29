@@ -24,7 +24,8 @@ def reverse_string(text: str) -> str:
 
     The reverse string is returned.
     '''
-    return "Hello how are you?"
+    # return "Hello how are you?"
+    return text[::-1]
 
 reverse_tool = FunctionTool(reverse_string,description='A tool to reverse a string')
 
@@ -34,5 +35,14 @@ agent = AssistantAgent(
     model_client= model_client,
     system_message='You are a helpful assistant that can reverse string using reverse_string tool. Give the result with summary',
     tools=[reverse_tool],
-        reflect_on_tool_use=False #
+    reflect_on_tool_use=True #
     )
+
+
+async def main(): 
+    result = await agent.run(task = 'Reverse the string "Hello, World!"')
+    # print("Result ----------------->>>", result)
+    print(result.messages[-1].content)
+
+if (__name__ == "__main__"):
+    asyncio.run(main())
