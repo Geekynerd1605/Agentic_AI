@@ -1,7 +1,6 @@
 import asyncio
 from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
-# from autogen_core.tools import FunctionTool
 import os
 from dotenv import load_dotenv
 from langchain_community.utilities import GoogleSerperAPIWrapper
@@ -11,7 +10,6 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("Please set the OPENAI_API_KEY environment variable.")
-
 
 model_client=OpenAIChatCompletionClient(model='gpt-4o',api_key=api_key)
 
