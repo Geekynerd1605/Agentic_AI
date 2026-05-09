@@ -28,6 +28,4 @@ yfinance
 langchain-experimental
 autogen-agentchat
 autogen-core
-autogen-ext
-autogen-ext["http-tool"]
-autogen-ext["openai"]
+autogen-ext[http-tool,openai]
